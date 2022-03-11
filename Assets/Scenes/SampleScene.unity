@@ -805,6 +805,7 @@ MonoBehaviour:
   JumpForce: 7.5
   Feet: {fileID: 753812183}
   MyRigidbody2D: {fileID: 753812182}
+  Animator: {fileID: 753812185}
 --- !u!95 &753812185
 Animator:
   serializedVersion: 3

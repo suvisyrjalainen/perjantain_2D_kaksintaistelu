@@ -31,11 +31,26 @@ public class player : MonoBehaviour
 		
 		if(Input.GetButtonDown("Jump") && Feet.IsTouchingLayers(LayerMask.GetMask("Ground"))){
 			MyRigidbody2D.AddForce(new Vector2(0f,JumpForce), ForceMode2D.Impulse);
+			Animator.SetTrigger("jump");
 		}
+		
+		Animator.SetFloat("walk", Mathf.Abs(horizontalSpeed));
 		
 		//Tämä komento liikuttaa näppäinpainallusten verran
 		MyRigidbody2D.velocity = new Vector2(horizontalSpeed * speed, MyRigidbody2D.velocity.y);
 		
-		Animator.SetFloat("walk", Mathf.Abs(horizontalSpeed));
+		
+		if(Feet.IsTouchingLayers(LayerMask.GetMask("Ground"))){
+			Animator.SetBool("is_grounded", true);
+		}
+		else{
+			Animator.SetBool("is_grounded", false);
+		}
+		
+		if(Input.GetButtonDown("Fire1")){
+			Animator.SetTrigger("punch_left");
+		}
+		
+		
     }
 }

@@ -802,7 +802,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 5
-  JumpForce: 7.5
+  JumpForce: 5
   Feet: {fileID: 753812183}
   MyRigidbody2D: {fileID: 753812182}
   Animator: {fileID: 753812185}

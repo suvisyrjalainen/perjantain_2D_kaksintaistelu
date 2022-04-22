@@ -4,10 +4,13 @@ using UnityEngine;
 
 public class catHealth : MonoBehaviour
 {
+	public float MaxHealth = 100f;
+    public float Health;
+	
     // Start is called before the first frame update
     void Start()
     {
-        
+        Health = MaxHealth;
     }
 
     // Update is called once per frame
@@ -21,6 +24,8 @@ public class catHealth : MonoBehaviour
         if (collision.gameObject.tag == "Enemy")
         {
             Debug.Log("Törmäsin vastustajaan");
+			Health -= 10;
+			Debug.Log(Health);
         }
     }
 }

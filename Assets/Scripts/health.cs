@@ -11,11 +11,13 @@ public class health : MonoBehaviour
     public Rigidbody2D MyRigidbody2D;
     public Animator Animator;
 
-
+    public GameObject healthbar;
+	
     // Start is called before the first frame update
     void Start()
     {
         Health = MaxHealth;
+		healthbar.GetComponent<slider>().SetMaxHealth(MaxHealth);
     }
 
     // Update is called once per frame

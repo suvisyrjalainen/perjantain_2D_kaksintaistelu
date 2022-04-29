@@ -9,10 +9,13 @@ public class catHealth : MonoBehaviour
 	
     public Animator MyAnimator;
 	
+	public GameObject healthbar;
+	
     // Start is called before the first frame update
     void Start()
     {
         Health = MaxHealth;
+		healthbar.GetComponent<slider>().SetMaxHealth(MaxHealth);
     }
 
     // Update is called once per frame
@@ -32,6 +35,7 @@ public class catHealth : MonoBehaviour
             Debug.Log("Törmäsin vastustajaan");
 			Health -= 10;
 			Debug.Log(Health);
+			healthbar.GetComponent<slider>().SetHealth(Health);
         }
     }
 	

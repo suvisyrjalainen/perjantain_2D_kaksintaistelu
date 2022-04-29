@@ -7,6 +7,8 @@ public class catHealth : MonoBehaviour
 	public float MaxHealth = 100f;
     public float Health;
 	
+    public Animator MyAnimator;
+	
     // Start is called before the first frame update
     void Start()
     {
@@ -16,6 +18,10 @@ public class catHealth : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+		if(Health == 0){
+			Die();
+			Health = -2;
+		}
         
     }
 	
@@ -28,4 +34,9 @@ public class catHealth : MonoBehaviour
 			Debug.Log(Health);
         }
     }
+	
+	void Die(){
+        MyAnimator.SetTrigger("die");
+    }
+	
 }

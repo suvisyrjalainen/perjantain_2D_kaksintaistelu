@@ -9,6 +9,10 @@ public class fight : MonoBehaviour
 	
 	private int Chooser = 0;
 	
+	public bool kick = false;
+	public bool punch = false;
+	public bool block = false;
+	
     // Start is called before the first frame update
     void Start()
     {
@@ -21,6 +25,8 @@ public class fight : MonoBehaviour
 		
 		if(Input.GetButtonDown("Fire1")){
 			
+			punch = true;
+			
 			Chooser = Random.Range(0,2);
 			if(Chooser == 1){
 			   Animator.SetTrigger("punch_left");
@@ -30,8 +36,15 @@ public class fight : MonoBehaviour
 			}
 		}
 		
+		if(Input.GetButtonUp("Fire1")){
+			punch = false;
+		}
+		
+		
 		
 		if(Input.GetButtonDown("Fire2")){
+			
+			kick = true;
 			
 			Chooser = Random.Range(0,2);
 			if(Chooser == 1){
@@ -42,12 +55,18 @@ public class fight : MonoBehaviour
 			}
 		}
 		
+		if(Input.GetButtonUp("Fire2")){
+			kick = false;
+		}
+		
 		if(Input.GetButtonDown("Fire3")){
 			Animator.SetBool("block", true);
+			block = true;
 		}
 		
 		if(Input.GetButtonUp("Fire3")){
 			Animator.SetBool("block", false);
+			block = false;
 		}
         
     }

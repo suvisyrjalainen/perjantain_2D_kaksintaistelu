@@ -33,7 +33,9 @@ public class catHealth : MonoBehaviour
         if (collision.gameObject.tag == "Enemy")
         {
             Debug.Log("Törmäsin vastustajaan");
-			Health -= 10;
+			if(GetComponent<fight>().kick == false){
+			    Health -= 10;
+			}
 			Debug.Log(Health);
 			healthbar.GetComponent<slider>().SetHealth(Health);
         }

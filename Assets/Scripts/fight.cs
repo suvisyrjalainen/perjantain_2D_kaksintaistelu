@@ -26,7 +26,7 @@ public class fight : MonoBehaviour
 		if(Input.GetButtonDown("Fire1")){
 			
 			punch = true;
-			
+			StartCoroutine(punch_off());
 			Chooser = Random.Range(0,2);
 			if(Chooser == 1){
 			   Animator.SetTrigger("punch_left");
@@ -37,7 +37,7 @@ public class fight : MonoBehaviour
 		}
 		
 		if(Input.GetButtonUp("Fire1")){
-			punch = false;
+			//punch = false;
 		}
 		
 		
@@ -45,7 +45,7 @@ public class fight : MonoBehaviour
 		if(Input.GetButtonDown("Fire2")){
 			
 			kick = true;
-			
+			StartCoroutine(kick_off());
 			Chooser = Random.Range(0,2);
 			if(Chooser == 1){
 			   Animator.SetTrigger("kick_left");
@@ -56,7 +56,7 @@ public class fight : MonoBehaviour
 		}
 		
 		if(Input.GetButtonUp("Fire2")){
-			kick = false;
+			//kick = false;
 		}
 		
 		if(Input.GetButtonDown("Fire3")){
@@ -70,6 +70,20 @@ public class fight : MonoBehaviour
 		}
         
     }
+	
+	IEnumerator kick_off(){
+		yield return new WaitForSeconds(0.2f);
+		Debug.Log("potku lopetettiin");
+		kick = false;
+		
+	}
+	
+	IEnumerator punch_off(){
+		yield return new WaitForSeconds(0.2f);
+		Debug.Log("lyönti lopetettiin");
+		kick = false;
+		
+	}
 }
 
 

@@ -1175,11 +1175,11 @@ CapsuleCollider2D:
   m_Enabled: 1
   m_Density: 1
   m_Material: {fileID: 0}
-  m_IsTrigger: 1
+  m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: -0.00000047683716, y: -0.030912757}
-  m_Size: {x: 0.6398382, y: 1.6928251}
+  m_Offset: {x: 0.11134386, y: -0.030912757}
+  m_Size: {x: 0.8, y: 1.6928251}
   m_Direction: 0
 --- !u!114 &468402786
 MonoBehaviour:
@@ -2750,7 +2750,7 @@ GameObject:
   - component: {fileID: 1596128021}
   m_Layer: 0
   m_Name: Skeleton_0
-  m_TagString: Untagged
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -2769,7 +2769,7 @@ CapsuleCollider2D:
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: -0.027836204, y: 0}
-  m_Size: {x: 0.71954036, y: 2}
+  m_Size: {x: 0.8, y: 2}
   m_Direction: 0
 --- !u!58 &1596128016
 CircleCollider2D:

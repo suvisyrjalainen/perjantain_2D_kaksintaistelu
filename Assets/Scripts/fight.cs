@@ -72,14 +72,14 @@ public class fight : MonoBehaviour
     }
 	
 	IEnumerator kick_off(){
-		yield return new WaitForSeconds(0.2f);
+		yield return new WaitForSeconds(1f);
 		Debug.Log("potku lopetettiin");
 		kick = false;
 		
 	}
 	
 	IEnumerator punch_off(){
-		yield return new WaitForSeconds(0.2f);
+		yield return new WaitForSeconds(1f);
 		Debug.Log("lyönti lopetettiin");
 		kick = false;
 		

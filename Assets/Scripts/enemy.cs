@@ -33,5 +33,46 @@ public class enemy : MonoBehaviour
 		Animator.SetFloat("Speed", Mathf.Abs(speed));
 		
 		distance = Vector3.Distance(pelaaja.transform.position, vihollinen.transform.position);
+    
+		//Debug.Log(distance);
+		
+		if(distance < 1.1){
+			speed = 0;
+		}
+		else{
+			
+		
+			if(pelaaja.transform.position.x < vihollinen.transform.position.x){
+				Flip(1);
+				speed = -1;
+			}
+			else{
+			   Flip(-1);
+			   speed = 1;
+			}
+		
+		}
+			
+
+		
     }
+	
+	public void Flip(int x)
+    {
+        transform.localScale = new Vector2(x,transform.localScale.y);
+        
+    }
+	/*
+	void OnCollisionEnter2D(Collision2D collision)
+    {
+        if (collision.gameObject.tag == "Horse")
+        {
+            
+			
+        }
+    }
+	
+	
+	*/
+	
 }
